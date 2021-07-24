@@ -4,22 +4,32 @@ import { StyleSheet, Text, View, Button, TextInput, SafeAreaView } from 'react-n
 
 export default function App() {
 
-  const [text, onChangeText] = React.useState(null);
+  const [text1, onChangeText1] = React.useState(null);
+  const [text2, onChangeText2] = React.useState(null);
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.text}>Login</Text>
+      <Text style={styles.text}>LOGIN</Text>
       <StatusBar style="auto" />
-      <View style={styles.textinput}>
+      <View style={styles.text_input}>
         <TextInput
           placeholder='Username'
-          value={text}
-          onChangeText={onChangeText}
+          value={text1}
+          onChangeText={onChangeText1}
+          style={styles.text_input1}
         />
         <TextInput
           placeholder='Password'
-          value={text}
-          onChangeText={onChangeText}
+          value={text2}
+          onChangeText={onChangeText2}
+          style={styles.text_input2}
+          secureTextEntry={true}
+        />
+      </View>
+      <View style={styles.button}>
+        <Button
+             title="submit"
+             color="black"
         />
       </View>
     </SafeAreaView>
@@ -32,9 +42,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    style: 'bold'
+    style: 'bold',
+    fontFamily: 'Helvetica'
   },
   text: {
-    color: 'green',
-  }
+    color: 'black',
+    fontWeight: 'bold',
+    fontSize: '25px',
+
+  },
+  text_input: {
+    borderColor: 'black',
+    borderRadius: 5,
+    margin: 10,
+    padding: 3,
+
+  },
+  text_input1: {
+    fontSize: '15px',
+    padding: 5,
+
+  },
+  text_input2: {
+    fontSize: '15px',
+    padding: 5,
+    
+  },
 });
